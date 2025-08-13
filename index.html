@@ -1,460 +1,523 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Freelancer - Start Bootstrap Theme</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
-                    </ul>
-                </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Holbert Lab</title>
+
+  <!-- Fonts & Icons -->
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" />
+
+  <!-- Theme CSS (includes Bootstrap) -->
+  <link href="css/styles.css" rel="stylesheet" />
+
+  <!-- Palette overrides + per-section colors (load LAST) -->
+  <style>
+    /* Base palette variables (still useful for utilities/buttons) */
+    :root{
+      --bs-primary: #008080;            /* teal */
+      --bs-primary-rgb: 0,128,128;
+      --bs-secondary: #61BDBD;          /* light aqua */
+      --bs-secondary-rgb: 97,189,189;
+      --bs-body-bg: #F5EFED;            /* off-white */
+      --bs-warning: #FCB8B0;            /* peach-pink */
+      --bs-danger:  #EE6D6D;            /* soft red */
+
+      --bs-link-color: #008080;
+      --bs-link-hover-color: #066B6B;
+    }
+
+    /* Global helpers */
+    body { background-color: var(--bs-body-bg); }
+    .text-darkish { color:#1a2530 !important; }
+
+    /* Buttons polish */
+    .btn-primary { background-color:#008080; border-color:#008080; }
+    .btn-primary:hover, .btn-primary:focus { background-color:#066B6B; border-color:#066B6B; }
+
+    /* NAVBAR (teal) */
+    .navbar { background-color:#008080 !important; }
+    .navbar .navbar-brand, .navbar .nav-link { color:#ffffff !important; }
+    .navbar .nav-link:hover { color:#FCB8B0 !important; }
+
+    /* ===== Section-specific backgrounds & typography ===== */
+    /* Masthead (light aqua) */
+    #masthead { background-color:#61BDBD; color:#083a3a; }
+    #masthead .masthead-avatar { width:100%; max-width:800px; height:auto; display:block; }
+    #masthead .divider-custom .divider-custom-line { background:#008080; } /* teal lines on aqua */
+    #masthead .divider-custom .divider-custom-icon { color:#008080; }
+    #masthead .publication-link {
+      display:inline-block; padding:.75rem 1.5rem; margin-top:1.5rem;
+      border:2px solid #008080; color:#008080; text-decoration:none; font-weight:500; border-radius:6px;
+      transition:background-color .3s, color .3s, box-shadow .3s;
+    }
+    #masthead .publication-link:hover { background:#008080; color:#fff; box-shadow:0 4px 10px rgba(0,0,0,.25); }
+
+    /* Research Focus (off-white) */
+    #research-focus { background-color:#F5EFED; color:#083a3a; }
+    #research-focus .divider-custom .divider-custom-line { background:#61BDBD; }
+    #research-focus .divider-custom .divider-custom-icon { color:#FCB8B0; }
+
+    /* Current Members (peach-pink) */
+    #current-members { background-color:#FCB8B0; color:#083a3a; }
+    #current-members .page-section-heading { color:#083a3a; }
+    #current-members .divider-custom .divider-custom-line { background:#008080; } /* teal on peach */
+    #current-members .divider-custom .divider-custom-icon { color:#008080; }
+
+    /* Member cards on peach background */
+    .member-photo {
+      width:180px; height:180px; object-fit:cover; border-radius:50%;
+      border:4px solid #008080; display:block; margin:0 auto 1rem; background:#fff;
+    }
+    .member-card {
+      background:#ffffff; border:1px solid rgba(0,0,0,0.06); border-radius:.75rem;
+      padding:1.25rem; text-align:center; height:100%;
+    }
+    .member-name { color:#1a2530; font-weight:700; margin-bottom:.25rem; }
+    .member-role, .member-bio { color:#253544; opacity:.9; }
+    .member-links a { color:#008080; font-weight:600; text-decoration:none; transition:color .3s; }
+    .member-links a:hover { color:#0A66C2; }
+
+    /* Contact (soft red) */
+    #contact { background-color:#EE6D6D; color:#ffffff; }
+    #contact .page-section-heading, #contact label { color:#ffffff; }
+    #contact .divider-custom .divider-custom-line { background:#ffffff; }
+    #contact .divider-custom .divider-custom-icon { color:#ffffff; }
+    #contact .form-control {
+      background:#fff; color:#1a2530; border-color:rgba(0,0,0,.15);
+    }
+    #contact .form-control:focus {
+      border-color:#008080; box-shadow:0 0 0 .2rem rgba(0,128,128,.25);
+    }
+    #contact .btn-primary { background:#008080; border-color:#008080; }
+    #contact .btn-primary:hover { background:#066B6B; border-color:#066B6B; }
+
+    /* Footer (teal) */
+    footer.footer, .copyright { background-color:#008080; color:#ffffff; }
+    .footer a { color:#ffffff; }
+    .footer a:hover { color:#FCB8B0; }
+  </style>
+</head>
+
+<body id="page-top">
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#page-top">Holbert Lab</a>
+      <button class="navbar-toggler text-uppercase font-weight-bold bg-light text-dark rounded"
+              type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+              aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-3 rounded" href="#research-focus">Research Focus</a></li>
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-3 rounded" href="#current-members">Current Members</a></li>
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-3 rounded" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MASTHEAD (light aqua) -->
+  <header id="masthead" class="masthead text-center text-white" style="padding-top:8rem; padding-bottom:6rem;">
+    <div class="container d-flex align-items-center flex-column">
+      <img class="masthead-avatar mb-5" src="assets/img/HolbertLabLogo.png" alt="Holbert Lab Logo" />
+
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <a href="https://pubmed.ncbi.nlm.nih.gov/?term=cassandra+holbert" class="publication-link">
+        Our Publications
+      </a>
+    </div>
+  </header>
+
+  <!-- RESEARCH FOCUS (off-white) -->
+  <section id="research-focus" class="page-section portfolio">
+    <div class="container">
+      <h2 class="page-section-heading text-center text-uppercase mb-0">Research Focus</h2>
+
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <div class="row justify-content-center">
+        <!-- Portfolio Item 1 -->
+        <div class="col-md-6 col-lg-4 mb-5">
+          <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
             </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
-                <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
-            </div>
-        </header>
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cake.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/circus.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 4-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/game.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 5-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/safe.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 6-->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="..." />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
-                </div>
-                <!-- About Section Button-->
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
-                        <i class="fas fa-download me-2"></i>
-                        Free Download!
-                    </a>
-                </div>
-            </div>
-        </section>
-        <!-- Contact Section-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Contact Section Form-->
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-xl-7">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Full name</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Email address</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Phone number</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Message</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer text-center">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Location-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
-                        <p class="lead mb-0">
-                            2215 John Daniel Drive
-                            <br />
-                            Clark, MO 65243
-                        </p>
-                    </div>
-                    <!-- Footer Social Icons-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
-                    </div>
-                    <!-- Footer About Text-->
-                    <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
-                        <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
-                            .
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; Your Website 2023</small></div>
+            <img class="img-fluid" src="assets/img/portfolio/image001.png" alt="..." />
+          </div>
         </div>
-        <!-- Portfolio Modals-->
-        <!-- Portfolio Modal 1-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Portfolio Item 2 -->
+        <div class="col-md-6 col-lg-4 mb-5">
+          <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
             </div>
+            <img class="img-fluid" src="assets/img/portfolio/image002.png" alt="..." />
+          </div>
         </div>
-        <!-- Portfolio Modal 2-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cake.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Portfolio Item 3 -->
+        <div class="col-md-6 col-lg-4 mb-5">
+          <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
             </div>
+            <img class="img-fluid" src="assets/img/portfolio/image003.png" alt="..." />
+          </div>
         </div>
-        <!-- Portfolio Modal 3-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRENT MEMBERS (peach-pink) -->
+  <section id="current-members" class="page-section mb-0">
+    <div class="container">
+      <h2 class="page-section-heading text-center text-uppercase">Current Members</h2>
+
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        <!-- Member 1 -->
+        <div class="col">
+          <div class="member-card">
+            <img class="member-photo" src="assets/img/members/RCH06179.jpg" alt="Prof. Cassandra Holbert headshot" />
+            <h5 class="member-name">Prof. Cassie Holbert</h5>
+            <div class="member-role">she/her/hers</div>
+            <p class="member-bio">
+              Cassie is interested in cancer biology and tumor immunology.
+              She loves coffee, houseplants, and a good book. Lives by the three Ps of life:
+              ponies, polyamines, and potatoes.
+            </p>
+            <div class="member-links mt-3">
+              <a href="https://www.linkedin.com/in/cassandra-holbert/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
             </div>
+          </div>
         </div>
-        <!-- Portfolio Modal 4-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/game.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+        <!-- Member 2 -->
+        <div class="col">
+          <div class="member-card">
+            <img class="member-photo" src="assets/img/members/member2.jpg" alt="Alex Smith headshot" />
+            <h5 class="member-name">Alex Smith</h5>
+            <div class="member-role">PhD Candidate</div>
+            <p class="member-bio">Polyamine metabolism, single-cell RNA-seq.</p>
+            <div class="member-links mt-3">
+              <a href="https://www.linkedin.com/in/YOUR-LINK-HERE" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
             </div>
+          </div>
         </div>
-        <!-- Portfolio Modal 5-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/safe.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+        <!-- Member 3 -->
+        <div class="col">
+          <div class="member-card">
+            <img class="member-photo" src="assets/img/members/member3.jpg" alt="Priya Patel headshot" />
+            <h5 class="member-name">Priya Patel</h5>
+            <div class="member-role">Research Technician</div>
+            <p class="member-bio">Flow cytometry, confocal imaging, mouse models.</p>
+            <div class="member-links mt-3">
+              <a href="https://www.linkedin.com/in/YOUR-LINK-HERE" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
             </div>
+          </div>
         </div>
-        <!-- Portfolio Modal 6-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/submarine.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+        <!-- Member 4 -->
+        <div class="col">
+          <div class="member-card">
+            <img class="member-photo" src="assets/img/members/member4.jpg" alt="Marco Rossi headshot" />
+            <h5 class="member-name">Marco Rossi</h5>
+            <div class="member-role">Postdoctoral Fellow</div>
+            <p class="member-bio">T-cell exhaustion, checkpoint pathways.</p>
+            <div class="member-links mt-3">
+              <a href="https://www.linkedin.com/in/YOUR-LINK-HERE" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
             </div>
+          </div>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+
+        <!-- Member 5 -->
+        <div class="col">
+          <div class="member-card">
+            <img class="member-photo" src="assets/img/members/member5.jpg" alt="Sara Kim headshot" />
+            <h5 class="member-name">Sara Kim</h5>
+            <div class="member-role">Master’s Student</div>
+            <p class="member-bio">ECM remodeling and migration assays.</p>
+            <div class="member-links mt-3">
+              <a href="https://www.linkedin.com/in/YOUR-LINK-HERE" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 6 -->
+        <div class="col">
+          <div class="member-card">
+            <img class="member-photo" src="assets/img/members/member6.jpg" alt="Leo Nguyen headshot" />
+            <h5 class="member-name">Leo Nguyen</h5>
+            <div class="member-role">Undergraduate</div>
+            <p class="member-bio">Data curation, figure design (BioRender).</p>
+            <div class="member-links mt-3">
+              <a href="https://www.linkedin.com/in/YOUR-LINK-HERE" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </div><!-- /row -->
+    </div>
+  </section>
+
+  <!-- CONTACT (soft red) -->
+  <section id="contact" class="page-section">
+    <div class="container">
+      <h2 class="page-section-heading text-center text-uppercase mb-0">Contact Me</h2>
+
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-7">
+          <form id="contactForm" novalidate>
+            <input type="text" name="website" id="website" class="d-none" tabindex="-1" autocomplete="off" />
+
+            <div class="form-floating mb-3">
+              <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." required />
+              <label for="name">Full name</label>
+              <div class="invalid-feedback">A name is required.</div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" required />
+              <label for="email">Email address</label>
+              <div class="invalid-feedback">A valid email is required.</div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input class="form-control" id="phone" name="phone" type="tel" placeholder="(123) 456-7890" required />
+              <label for="phone">Phone number</label>
+              <div class="invalid-feedback">A phone number is required.</div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." style="height: 10rem" required></textarea>
+              <label for="message">Message</label>
+              <div class="invalid-feedback">A message is required.</div>
+            </div>
+
+            <div class="d-none" id="submitSuccessMessage">
+              <div class="text-center mb-3 fw-bolder">Thanks—your message was sent.</div>
+            </div>
+            <div class="d-none" id="submitErrorMessage">
+              <div class="text-center mb-3">Error sending message. Please try again.</div>
+            </div>
+
+            <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact form hook (Google Apps Script) -->
+    <script>
+      const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxl0kyA1VLRAm4PZVq_Nly9gV5qdEqealO1JhWsKb-n8f_LW5e7dxgW-BHvj1GplQwqaQ/exec";
+      (function () {
+        const form = document.getElementById("contactForm");
+        const btn  = document.getElementById("submitButton");
+        const ok   = document.getElementById("submitSuccessMessage");
+        const err  = document.getElementById("submitErrorMessage");
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          ok.classList.add("d-none");
+          err.classList.add("d-none");
+
+          if (document.getElementById("website").value.trim() !== "") {
+            ok.classList.remove("d-none"); form.reset(); return;
+          }
+
+          if (!form.checkValidity()) {
+            form.classList.add("was-validated");
+            return;
+          }
+
+          btn.disabled = true;
+
+          try {
+            const fd = new FormData(form);
+            fd.append("_subject", "New message from your site");
+            fd.append("_time", new Date().toISOString());
+
+            const res = await fetch(WEB_APP_URL, { method: "POST", body: fd });
+            if (res.ok) {
+              ok.classList.remove("d-none");
+              form.reset();
+              form.classList.remove("was-validated");
+            } else {
+              throw new Error("Bad response");
+            }
+          } catch (e2) {
+            err.classList.remove("d-none");
+            console.error(e2);
+          } finally {
+            btn.disabled = false;
+          }
+        });
+      })();
+    </script>
+  </section>
+
+  <!-- FOOTER (teal) -->
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Location</h4>
+          <p class="mb-0">
+            Donnelly Science 245<br />
+            2-82 E Cold Spring Ln<br />
+            Baltimore, MD 21210
+          </p>
+        </div>
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Around the Web</h4>
+          <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+          <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+          <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+          <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+        </div>
+        <div class="col-lg-4">
+          <h4 class="text-uppercase mb-4">About This Site</h4>
+          <p class="mb-0">
+            Built on the MIT-licensed Bootstrap theme by
+            <a href="http://startbootstrap.com" class="text-white">Start Bootstrap</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="copyright py-4 text-center">
+    <div class="container"><small>© Holbert Lab 2025</small></div>
+  </div>
+<!-- Portfolio Modal 1 -->
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center pb-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <h2 class="portfolio-modal-title text-uppercase mb-0">Research Focus Image 1</h2>
+              <div class="divider-custom my-4">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+              </div>
+              <img class="img-fluid rounded mb-4" src="assets/img/portfolio/image001.png" alt="Research focus graphic 1" />
+              <button class="btn btn-primary" data-bs-dismiss="modal">
+                <i class="fas fa-xmark fa-fw"></i>
+                Close Window
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Portfolio Modal 2 -->
+<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center pb-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <h2 class="portfolio-modal-title text-uppercase mb-0">Research Focus Image 2</h2>
+              <div class="divider-custom my-4">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+              </div>
+              <img class="img-fluid rounded mb-4" src="assets/img/portfolio/image002.png" alt="Research focus graphic 2" />
+              <button class="btn btn-primary" data-bs-dismiss="modal">
+                <i class="fas fa-xmark fa-fw"></i>
+                Close Window
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Portfolio Modal 3 -->
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center pb-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <h2 class="portfolio-modal-title text-uppercase mb-0">Research Focus Image 3</h2>
+              <div class="divider-custom my-4">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+              </div>
+              <img class="img-fluid rounded mb-4" src="assets/img/portfolio/image003.png" alt="Research focus graphic 3" />
+              <button class="btn btn-primary" data-bs-dismiss="modal">
+                <i class="fas fa-xmark fa-fw"></i>
+                Close Window
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Bootstrap core JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Theme scripts -->
+  <script src="js/scripts.js"></script>
+</body>
 </html>
