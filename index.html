@@ -80,6 +80,54 @@
     .member-links a { color:#008080; font-weight:600; text-decoration:none; transition:color .3s; }
     .member-links a:hover { color:#0A66C2; }
 
+    /* Former Members (soft seafoam) */
+    #former-members { background-color:#D8EDE8; color:#083a3a; }
+    #former-members .page-section-heading { color:#083a3a; }
+    #former-members .divider-custom .divider-custom-line { background:#008080; }
+    #former-members .divider-custom .divider-custom-icon { color:#EE6D6D; }
+
+    #former-members .accordion { max-width:1100px; margin:0 auto; }
+    #former-members .accordion-item { border:0; background:transparent; }
+    #former-members .accordion-button {
+      background:#ffffff; color:#083a3a; font-weight:700; border-radius:.75rem !important;
+      box-shadow:none; padding:1rem 1.25rem;
+    }
+    #former-members .accordion-button:not(.collapsed) {
+      background:#ffffff; color:#008080;
+    }
+    #former-members .accordion-button:focus { box-shadow:0 0 0 .2rem rgba(0,128,128,.2); }
+    #former-members .accordion-body { padding:1.5rem 0 0; }
+
+    .former-card {
+      background:#ffffff; border:1px solid rgba(0,0,0,.06); border-radius:.75rem;
+      padding:1.25rem; text-align:center; height:100%; min-height:270px;
+      display:flex; flex-direction:column; justify-content:flex-start;
+    }
+    .former-photo-placeholder {
+      width:110px; height:110px; border-radius:50%; margin:0 auto 1rem;
+      display:flex; align-items:center; justify-content:center;
+      background:#F5EFED; border:4px solid #61BDBD; color:#008080; font-size:2.4rem;
+    }
+    .former-name { color:#1a2530; font-weight:700; margin-bottom:.25rem; }
+    .former-role, .former-bio { color:#253544; opacity:.9; }
+    .former-role { font-size:.95rem; margin-bottom:.75rem; }
+
+    #formerMembersCarousel { padding:0 4rem 3rem; }
+    #formerMembersCarousel .carousel-control-prev,
+    #formerMembersCarousel .carousel-control-next { width:3rem; opacity:1; }
+    #formerMembersCarousel .carousel-control-prev-icon,
+    #formerMembersCarousel .carousel-control-next-icon {
+      width:2.5rem; height:2.5rem; border-radius:50%; background-color:#008080; background-size:55%;
+    }
+    #formerMembersCarousel .carousel-indicators { margin-bottom:0; }
+    #formerMembersCarousel .carousel-indicators [data-bs-target] {
+      width:10px; height:10px; border-radius:50%; background-color:#008080;
+    }
+    @media (max-width:767.98px) {
+      #formerMembersCarousel { padding-left:2.75rem; padding-right:2.75rem; }
+      .former-card { min-height:auto; }
+    }
+
     /* Contact (soft red) */
     #contact { background-color:#EE6D6D; color:#ffffff; }
     #contact .page-section-heading, #contact label { color:#ffffff; }
@@ -116,6 +164,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-3 rounded" href="#research-focus">Research Focus</a></li>
           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-3 rounded" href="#current-members">Current Members</a></li>
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-3 rounded" href="#former-members">Former Members</a></li>
           <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-3 rounded" href="#contact">Interested?</a></li>
         </ul>
       </div>
@@ -217,13 +266,13 @@
         <!-- Member 2 -->
         <div class="col">
           <div class="member-card">
-            <img class="member-photo" src="assets/img/members/lauren.jpeg" alt="headshot" />
-            <h5 class="member-name">Lauren Imasa</h5>
-            <div class="member-role">she/her/hers | Class of 2026</div>
-            <p class="member-bio"> Biology/Pyschology major with plans to pursue an MD after graduation. She loves lacrosse, hanging out at the beach, traveling, and dendritic cells. She was born a preemie at 1 lbs 14 oz - basically the size of a soda can! </p>
-            <p class="member-bio"><b>Current Project: </b>Cytokine production in the ovarian tumor microenvironment</p>
+            <img class="member-photo" src="img/members/ChelseaPicture.jpeg" alt="headshot" />
+            <h5 class="member-name">Chelsea Fuchs</h5>
+            <div class="member-role">she/her/hers | Class of 2027</div>
+            <p class="member-bio">Honors biochemistry major minoring in forensic science with plans to pursue further education in laboratory sciences after graduation. She loves music, dogs, reading, and VDJ recombination. A fun fact is that she lived next to an 1800s graveyard for twelve years and despite being from Buffalo, she is allergic to the cold.  </p>
+            <p class="member-bio"><b>Current Project: </b>Honors Thesis: Impact of polyamine depletion via ivospemin on metastasis</p>
             <div class="member-links mt-3">
-              <a href="https://www.linkedin.com/in/lauren-imasa-457109257/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+              <a href="https://www.linkedin.com/in/chelsea-fuchs-050537327/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
                 <i class="fab fa-linkedin"></i> LinkedIn
               </a>
             </div>
@@ -233,13 +282,13 @@
         <!-- Member 3 -->
         <div class="col">
           <div class="member-card">
-            <img class="member-photo" src="assets/img/members/michael.jpg" alt="headshot" />
-            <h5 class="member-name">Michael Moseley</h5>
-            <div class="member-role">he/him/his | Class of 2026</div>
-            <p class="member-bio">Chemistry and Philosophy double major with plans to pursue an MD after graduation. He loves playing piano, organic chemistry, and NK cells. Has a 500+ day Duolingo streak yet still knows impressively little French.</p>
-            <p class="member-bio"><b>Current Project:</b> Polyamine-mediated polarization of TH17 cells</p>
+            <img class="member-photo" src="img/members/Gabi.jpeg" alt="headshot" />
+            <h5 class="member-name">Gabi Verdicchio</h5>
+            <div class="member-role">she/her/hers | Class of 2027</div>
+            <p class="member-bio"> Biology major with intention of going to Veterinary school. She loves all animals, volleyball, working out, baking/cooking, and spending time with family and friends. She loves animals so much she once tried to “rescue” someone else’s dog… while the owner was still holding the leash. </p>
+            <p class="member-bio"><b>Current Project:</b> Gut microbiome differences between domesticated and wild horses</p>
             <div class="member-links mt-3">
-              <a href="https://www.linkedin.com/in/michael-moseley-685113351/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+              <a href="https://www.linkedin.com/in/gabriella-verdicchio-43477923b/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
                 <i class="fab fa-linkedin"></i> LinkedIn
               </a>
             </div>
@@ -249,15 +298,15 @@
         <!-- Member 4 -->
         <div class="col">
           <div class="member-card">
-            <img class="member-photo" src="assets/img/members/jamie.jpg" alt="headshot" />
-            <h5 class="member-name">Jamie Cashour</h5>
-            <div class="member-role">she/her/hers | Class of 2026</div>
-            <p class="member-bio">Studying Biology and Psychology with plans to pursue a DNP after graduation. She loves RuPaul's Drag Race, succulents, going to drag shows, reading, and macrophages. Has had brain surgery twice and has titanium in her spine and somehow still no superpowers.</p>
-            <p class="member-bio"><b>Current Project: </b>Polyamine influence on macrophage fate </p>
+            <img class="member-photo" src="img/members/Shudan_pic.png" alt="headshot" />
+            <h5 class="member-name">Shudan Jew</h5>
+            <div class="member-role">she/her/hers | Class of 2027</div>
+            <p class="member-bio">Honors BioHealth Major, Concentration in Biotech & Biopharma. Plans to pursue graduate school and conduct research in bioengineering after graduation! She loves going to museums, trying new restaurants/cafes, hiking, and thrifting. She used to own a motorcycle and even survived a crash once! </p>
+            <p class="member-bio"><b>Current Project: </b>Transcriptional Consequences of Polyamine Depletion on Ovarian Cancer Cells </p>
             <div class="member-links mt-3">
-              <!--<a href="https://www.linkedin.com/in/YOUR-LINK-HERE" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+              <a href="https://www.linkedin.com/in/shudanj0118/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
                 <i class="fab fa-linkedin"></i> LinkedIn
-              </a>-->
+              </a>
             </div>
           </div>
         </div>
@@ -265,15 +314,15 @@
         <!-- Member 5 -->
         <div class="col">
           <div class="member-card">
-            <img class="member-photo" src="assets/img/members/yuri.jpg" alt="headshot" />
-            <h5 class="member-name">Yuri Singh</h5>
-            <div class="member-role">he/him/his | Class of 2026</div>
-            <p class="member-bio">Biochemistry major with plans to pursue academic research after graduation. He loves fishing, his cat Gumpus, and exploring Baltimore! Lived in the Philippines for a summer when he was seven and had a daycare teacher who would always show up and eat Elmer’s glue straight out of the bottle. To this day, he doesn’t know if it was real or not.</p>
-            <p class="member-bio"><b>Current Project:</b> Polyamine-mediated polarization of TH17 cells</p>
+            <img class="member-photo" src="img/members/Nane.jpeg" alt="headshot" />
+            <h5 class="member-name">Nane Tevosyan</h5>
+            <div class="member-role">she/her/hers | Class of 2027</div>
+            <p class="member-bio">BioHealth major [concentration in Biotech and Biopharma] and minoring in Math and Chemistry with plans to go to Grad school and pursue academic research. She loves reading sci-fi, puzzling, finding and going to cute cafes, and NK-cells. She can (and previously has done so) finish a 1000-piece puzzle in a day yet a basket of laundry will take her three.</p>
+            <p class="member-bio"><b>Current Project:</b> Polyamine-mediated macrophage polarization</p>
             <div class="member-links mt-3">
-              <a href="https://www.linkedin.com/in/yuri-singh-a72970252/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+              <!--a href="https://www.linkedin.com/in/yuri-singh-a72970252/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
                 <i class="fab fa-linkedin"></i> LinkedIn
-              </a>
+              </a>-->
             </div>
           </div>
         </div>
@@ -294,7 +343,7 @@
           </div>
         </div>
 
-        <!-- Member 7 -->
+        <!-- Member 7
         <div class="col">
           <div class="member-card">
             <img class="member-photo" src="assets/img/members/Dalu.jpg" alt="Dalu Ezekwesili headshot" />
@@ -303,14 +352,14 @@
             <p class="member-bio">Pre-med biology major with plans to be come an ophthalmologist.He loves to thrift when he has time, and his favorite immune cell would probably be monocytes. He was the 3-time spelling bee champion from 1st to 3rd grade with the medals to prove it but unfortunately had to give up his title because he moved away.</p>
             <p class="member-bio"><b>Current Project:</b> Ivospemin and chemotherapy synergy
             <div class="member-links mt-3">
-              <!--<a href="https://www.linkedin.com/in/YOUR-LINK-HERE/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
-                <i class="fab fa-linkedin"></i> LinkedIn -->
+              <a href="https://www.linkedin.com/in/YOUR-LINK-HERE/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
               </a>
             </div>
           </div>
-        </div>
+        </div>-->
 
-        <!-- Member 8 -->
+        <!-- Member 8
         <div class="col">
           <div class="member-card">
             <img class="member-photo" src="assets/img/members/Steph.jpeg" alt="Stephany Guzman headshot" />
@@ -319,14 +368,14 @@
             <p class="member-bio">Biology major with a Health and the Human Experience minor planning to pursue an MD after graduation. She loves baking, making (and drinking) coffee, hanging out at the beach, traveling, and oddly enough, eosinophils. She studied Italian for two years straight, even got honors for it...and now the only word she can say is "siao" (which she definitely spelled wrong)</p>
             <p class="member-bio"><b>Current Project: </b>Cytokine production in the ovarian tumor microenvironment</p>
             <div class="member-links mt-3">
-              <!--<a href="https://www.linkedin.com/in/YOUR-LINK-HERE/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
-                <i class="fab fa-linkedin"></i> LinkedIn -->
+              <a href="https://www.linkedin.com/in/YOUR-LINK-HERE/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
               </a> 
             </div>
           </div>
-        </div>
+        </div>-->
 
-        <!-- Member 9 -->
+        <!-- Member 9 
         <div class="col">
           <div class="member-card">
             <img class="member-photo" src="assets/img/members/Glory.jpg" alt="glory adeyemi headshot" />
@@ -334,29 +383,232 @@
             <div class="member-role">she/her/hers | Class of 2026</div>
             <p class="member-bio">Biology major with plans of going to medical school and becoming a dermatologist. She loves all forms of art (photoggraphy, dance, painting), cooking, and working out! Her favorite immune cells are granulocytes, specifically basopils. She once thought she was locked in an enclosure with lions at a resort in South Africa, turns out the gate was a push, not a pull.</p>
             <p class="member-bio"><b>Current Project:</b> Polyamine influence on macrophage fate</p>
-            <!--<div class="member-links mt-3">
+            <div class="member-links mt-3">
               <a href="https://www.linkedin.com/in/YOUR-LINK-HERE/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
-                <i class="fab fa-linkedin"></i> LinkedIn -->
+                <i class="fab fa-linkedin"></i> LinkedIn 
               </a>
             </div>
           </div>
-        </div>
+        </div> -->
       </div><!-- /row -->
-    </div>
-    <div style="width: 50%; margin: 20px auto 0 auto; display: flex; justify-content: center;">
-    <div class="accordion" id="accordionExample" style="width: 100%">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Former Members
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong></strong>
+    </div><!-- /container -->
+  </section>
+
+  <!-- FORMER MEMBERS (soft seafoam) -->
+  <section id="former-members" class="page-section mb-0">
+    <div class="container">
+      <h2 class="page-section-heading text-center text-uppercase">Lab Alumni</h2>
+
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <div class="accordion" id="formerMembersAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="formerMembersHeading">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#formerMembersCollapse" aria-expanded="true"
+                    aria-controls="formerMembersCollapse">
+              Where Are They Now?
+            </button>
+          </h3>
+
+          <div id="formerMembersCollapse" class="accordion-collapse collapse show"
+               aria-labelledby="formerMembersHeading" data-bs-parent="#formerMembersAccordion">
+            <div class="accordion-body">
+              <!--
+                EXPANDING THIS CAROUSEL:
+                1. Each .carousel-item is one group of three former students.
+                2. Duplicate an entire .carousel-item block when you need another group.
+                3. Add a matching indicator button and increment data-bs-slide-to.
+                4. Only the first .carousel-item and first indicator should have class="active".
+              -->
+              <div id="formerMembersCarousel" class="carousel slide" data-bs-interval="false" aria-label="Former lab members">
+                <div class="carousel-indicators">
+          <button type="button" data-bs-target="#formerMembersCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Former members group 1"></button>
+          <button type="button" data-bs-target="#formerMembersCarousel" data-bs-slide-to="1" aria-label="Former members group 2"></button>
+          <button type="button" data-bs-target="#formerMembersCarousel" data-bs-slide-to="2" aria-label="Former members group 3"></button>
+          <button type="button" data-bs-target="#formerMembersCarousel" data-bs-slide-to="3" aria-label="Former members group 4"></button>
+                </div>
+
+                <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row g-4 justify-content-center">
+              <div class="col-md-4 mb-4 mb-md-0">
+                <article class="former-card">
+                  <!-- Replace this icon block with an <img> using class="member-photo" when a headshot is available. -->
+                   <!--<img class="member-photo" src="img/members/StudentName.jpg" alt="Student Name headshot" />-->
+                  <img class="member-photo" src="img/members/former/lauren.jpeg" alt="Lauren Imasa headshot" />
+                  <h5 class="former-name">Lauren Imasa</h5>
+                  <div class="former-role">Class of 2026 | Hauber Fellow</div>
+                  <p class="former-bio">Lauren completed a BS in Biology/Psychology. <br><br> Research Technician at New York Institute of Technology.</p>
+                  <div class="member-links mt-3">
+              <a href="https://www.linkedin.com/in/lauren-imasa-457109257/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+            </div>
+                </article>
+              </div>
+              <div class="col-md-4 mb-4 mb-md-0">
+                <article class="former-card">
+                  <!-- Replace this icon block with an <img> using class="member-photo" when a headshot is available. -->
+                   <!--<img class="member-photo" src="img/members/StudentName.jpg" alt="Student Name headshot" />-->
+                  <img class="member-photo" src="img/members/former/michael.jpg" alt="Michael Moseley headshot" />
+                  <h5 class="former-name">Michael Moseley</h5>
+                  <div class="former-role">Class of 2026 | Hauber Fellow</div>
+                  <p class="former-bio">Michael graduated in 2026 as a Chemistry and Philosophy Double Major with a Minor in Statistics. <br><br> MD Student at Tufts University.</p>
+                  <div class="member-links mt-3">
+              <a href="https://www.linkedin.com/in/michael-moseley/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+            </div>
+                </article>
+              </div>
+              <div class="col-md-4 mb-4 mb-md-0">
+                <article class="former-card">
+                  <!-- Replace this icon block with an <img> using class="member-photo" when a headshot is available. -->
+                   <!--<img class="member-photo" src="img/members/StudentName.jpg" alt="Student Name headshot" />-->
+                  <img class="member-photo" src="img/members/former/yuri.jpg" alt="Yuri Singh headshot" />
+                  <h5 class="former-name">Yuri Singh</h5>
+                  <div class="former-role">Class of 2026 | Hauber Fellow</div>
+                  <p class="former-bio">Yuri graduated with a BS in Biochemistry. <br><br> Post-Baccalaureate Research Fellow at the National Institute of Aging.</p>
+                  <div class="member-links mt-3">
+              <a href="https://www.linkedin.com/in/yuri-singh-a72970252/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+            </div>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row g-4 justify-content-center">
+              <div class="col-md-4 mb-4 mb-md-0">
+                <article class="former-card">
+                  <!-- Replace this icon block with an <img> using class="member-photo" when a headshot is available. -->
+                  <img class="member-photo" src="img/members/former/Izzy.PNG" alt="Izzy Paiva headshot" />
+                  <h5 class="former-name">Izzy Paiva</h5>
+                  <div class="former-role">Class of 2026 </div>
+                  <p class="former-bio">Izzy graduated with a BS in Biology through the Honors Program with a Minor in English. <br><br> Medical Assistant at The Maryland Spine Center</p>
+                  <div class="member-links mt-3">
+              <a href="https://www.linkedin.com/in/izabelpaiva/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+            </div>
+                </article>
+              </div>
+              <div class="col-md-4 mb-4 mb-md-0">
+                <article class="former-card">
+                   <!-- Replace this icon block with an <img> using class="member-photo" when a headshot is available. -->
+                  <img class="member-photo" src="img/members/former/Emma.png" alt="Emma Dorney headshot" />
+                  <h5 class="former-name">Emma Dorney</h5>
+                  <div class="former-role">Class of 2026 </div>
+                  <p class="former-bio">Emma graduated with a BS in Biology and Minors in Statistics and Studio Arts. <br><br> </p>
+                  <div class="member-links mt-3">
+              <a href="https://www.linkedin.com/in/emma-dorney-7a84a2279/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+            </div>
+                </article>
+              </div>
+              <!--<div class="col-md-4 mb-4 mb-md-0">
+                <article class="former-card">
+                   Replace this icon block with an <img> using class="member-photo" when a headshot is available. 
+                  <div class="former-photo-placeholder" aria-hidden="true"><i class="fas fa-user-graduate"></i></div>
+                  <h5 class="former-name">Former Student 6</h5>
+                  <div class="former-role">Class of 20XX | Former Lab Member</div>
+                  <p class="former-bio">Add a short biography, degree information, or what this student is doing after leaving the lab.</p>
+                  <p class="former-bio mb-0"><b>Former Project:</b> Add project title or research area here.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row g-4 justify-content-center">
+              <div class="col-md-4 mb-4 mb-md-0">
+                <article class="former-card">
+                   Replace this icon block with an <img> using class="member-photo" when a headshot is available. 
+                  <div class="former-photo-placeholder" aria-hidden="true"><i class="fas fa-user-graduate"></i></div>
+                  <h5 class="former-name">Former Student 7</h5>
+                  <div class="former-role">Class of 20XX | Former Lab Member</div>
+                  <p class="former-bio">Add a short biography, degree information, or what this student is doing after leaving the lab.</p>
+                  <p class="former-bio mb-0"><b>Former Project:</b> Add project title or research area here.</p>
+                </article>
+              </div>
+              <div class="col-md-4 mb-4 mb-md-0">
+                <article class="former-card">
+                  Replace this icon block with an <img> using class="member-photo" when a headshot is available. 
+                  <div class="former-photo-placeholder" aria-hidden="true"><i class="fas fa-user-graduate"></i></div>
+                  <h5 class="former-name">Former Student 8</h5>
+                  <div class="former-role">Class of 20XX | Former Lab Member</div>
+                  <p class="former-bio">Add a short biography, degree information, or what this student is doing after leaving the lab.</p>
+                  <p class="former-bio mb-0"><b>Former Project:</b> Add project title or research area here.</p>
+                </article>
+              </div>
+              <div class="col-md-4 mb-4 mb-md-0">
+                <article class="former-card">
+                   Replace this icon block with an <img> using class="member-photo" when a headshot is available. 
+                  <div class="former-photo-placeholder" aria-hidden="true"><i class="fas fa-user-graduate"></i></div>
+                  <h5 class="former-name">Former Student 9</h5>
+                  <div class="former-role">Class of 20XX | Former Lab Member</div>
+                  <p class="former-bio">Add a short biography, degree information, or what this student is doing after leaving the lab.</p>
+                  <p class="former-bio mb-0"><b>Former Project:</b> Add project title or research area here.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row g-4 justify-content-center">
+              <div class="col-md-4 mb-4 mb-md-0">
+                <article class="former-card">
+                   Replace this icon block with an <img> using class="member-photo" when a headshot is available. 
+                  <div class="former-photo-placeholder" aria-hidden="true"><i class="fas fa-user-graduate"></i></div>
+                  <h5 class="former-name">Former Student 10</h5>
+                  <div class="former-role">Class of 20XX | Former Lab Member</div>
+                  <p class="former-bio">Add a short biography, degree information, or what this student is doing after leaving the lab.</p>
+                  <p class="former-bio mb-0"><b>Former Project:</b> Add project title or research area here.</p>
+                </article>
+              </div>
+              <div class="col-md-4 mb-4 mb-md-0">
+                <article class="former-card">
+                   Replace this icon block with an <img> using class="member-photo" when a headshot is available. 
+                  <div class="former-photo-placeholder" aria-hidden="true"><i class="fas fa-user-graduate"></i></div>
+                  <h5 class="former-name">Former Student 11</h5>
+                  <div class="former-role">Class of 20XX | Former Lab Member</div>
+                  <p class="former-bio">Add a short biography, degree information, or what this student is doing after leaving the lab.</p>
+                  <p class="former-bio mb-0"><b>Former Project:</b> Add project title or research area here.</p>
+                </article>
+              </div>
+              <div class="col-md-4 mb-4 mb-md-0">
+                <article class="former-card">
+                   Replace this icon block with an <img> using class="member-photo" when a headshot is available. 
+                  <div class="former-photo-placeholder" aria-hidden="true"><i class="fas fa-user-graduate"></i></div>
+                  <h5 class="former-name">Former Student 12</h5>
+                  <div class="former-role">Class of 20XX | Former Lab Member</div>
+                  <p class="former-bio">Add a short biography, degree information, or what this student is doing after leaving the lab.</p>
+                  <p class="former-bio mb-0"><b>Former Project:</b> Add project title or research area here.</p>
+                </article>
+              </div> -->
+            </div>
+          </div> 
+                </div> 
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#formerMembersCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous three former members</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#formerMembersCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next three former members</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
   </section>
 
   <!-- CONTACT (soft red) -->
@@ -369,7 +621,7 @@
         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
         <div class="divider-custom-line"></div>
       </div>
-      <p class="member-bio"><p style="text-align: center;">We are currently closed to new students for the 2025-2026 academic year. <br> If you are a LUM student interested in research during the 2026-2027 academic year, feel free to <a href="mailto:cholbert@loyola.edu">email Dr. Holbert</a> to learn about the application process.</p></p>
+      <p class="member-bio"><p style="text-align: center;">We are currently closed to new students for the 2026-2027 academic year. <br> If you are a LUM student interested in research during the 2027-2028 academic year, feel free to <a href="mailto:cholbert@loyola.edu">email Dr. Holbert</a> to learn about the application process.</p></p>
       <br>
       <br>
      <!-- <div class="row justify-content-center">
@@ -470,7 +722,7 @@
         <div class="col-lg-4 mb-5 mb-lg-0">
           <h4 class="text-uppercase mb-4">Location</h4>
           <p class="mb-0">
-            Donnelly Science 245<br />
+            Donnelly Science 277<br />
             2-82 E Cold Spring Ln<br />
             Baltimore, MD 21210
           </p>
@@ -494,7 +746,7 @@
   </footer>
 
   <div class="copyright py-4 text-center">
-    <div class="container"><small>© Holbert Lab 2025</small></div>
+    <div class="container"><small>© Holbert Lab 2026</small></div>
   </div>
 <!-- Portfolio Modal 1 -->
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
